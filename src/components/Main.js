@@ -2,6 +2,8 @@ import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./Landing";
 import styled from "styled-components";
+import Register from "./Register";
+import Login from "./Login";
 
 //Styled-components
 const Div = styled.div`
@@ -46,6 +48,8 @@ const Main = () => {
       <Shape></Shape>
       <Routes>
         <Route path="/" element={<Landing />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/*" element={<Navigate />} />
       </Routes>
     </Div>
