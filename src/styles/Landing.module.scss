@@ -3,13 +3,15 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  background: linear-gradient(to bottom, #fff, #e9ecf6);
+  background: linear-gradient(to bottom, #fff, #e9ecf6af);
+  backdrop-filter: blur(20px) saturate(70%);
   border-radius: 20px;
   width: 90%;
   height: 660px;
   overflow: hidden;
   padding: 6px;
   border: 2px solid #fff;
+  z-index: 10;
 
   .buttonContainer,
   .imgContainer {
@@ -90,5 +92,12 @@
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: 999px) {
+  .container {
+    flex-direction: row;
+    max-width: 1200px;
   }
 }
