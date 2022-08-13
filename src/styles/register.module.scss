@@ -95,6 +95,7 @@
     top: -13px;
     right: 10px;
     border-radius: 5px;
+    transition: all ease 0.3s;
   }
 
   .checkbox {
@@ -102,10 +103,13 @@
     flex-direction: row;
     align-items: center;
     margin-left: 10px;
-
+    
     p {
       margin-right: 5px;
       padding-bottom: 4px;
+      @media screen and (min-width: 660px) {
+        cursor: pointer;
+      }
     }
     input {
       appearance: none;
@@ -114,6 +118,9 @@
       border: 1px solid #3f3c51;
       border-radius: 50%;
       transition: all ease 0.3s;
+      @media screen and (min-width: 660px) {
+        cursor: pointer;
+      }
 
       &:checked {
         background: #3f3c51;
@@ -158,6 +165,10 @@
   a {
     text-decoration: none;
     color: #8ab2df;
+    transition: all ease .3s;
+    &:hover {
+      color: #5d98da;
+    }
   }
 }
 
