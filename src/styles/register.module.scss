@@ -1,0 +1,154 @@
+.container {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.723), #e9ecf6d6);
+  backdrop-filter: blur(20px) saturate(70%);
+  border-radius: 20px;
+  width: 90%;
+  height: 660px;
+  z-index: 10;
+  border: 2px solid #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+
+  .imageContainer {
+    display: none;
+  }
+
+  .header {
+    flex: 20;
+  }
+
+  .formContainer {
+    flex: 60;
+  }
+
+  .iconContainer {
+    flex: 15;
+  }
+
+  .login {
+    flex: 5;
+  }
+}
+
+.header {
+  flex: 20;
+  text-align: center;
+  h1 {
+    color: #3f3c51;
+    padding-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  p {
+    color: #3f3c51;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+}
+
+.formContainer {
+  width: 90%;
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 65px;
+    position: relative;
+  }
+
+  input:not([type="checkbox"]) {
+    width: 100%;
+    height: 50px;
+    padding: 2px 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+
+    &::placeholder {
+      color: #3f3c5190;
+      font-weight: 500;
+    }
+  }
+
+  span {
+    margin-top: 4px;
+    margin-left: 5px;
+    font-size: 0.8rem;
+    background: #ff5959;
+    color: #fff;
+    padding: 1px 5px;
+    opacity: 0.8;
+    position: absolute;
+    top: -13px;
+    right: 10px;
+    border-radius: 5px;
+  }
+
+  .checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 10px;
+
+    p {
+      margin-right: 5px;
+      padding-bottom: 4px;
+    }
+    input {
+      appearance: none;
+      width: 17px;
+      height: 17px;
+      border: 1px solid #3f3c51;
+      border-radius: 50%;
+      transition: all ease 0.3s;
+
+      &:checked {
+        background: #3f3c51;
+      }
+    }
+    span {
+      position: static;
+      margin-bottom: 4px;
+    }
+  }
+
+  .SignUpButton {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: #fc6b68;
+    color: rgba(255, 255, 255, 0.858);
+    font-weight: bold;
+    box-shadow: 0 10px 30px #fc6b684f;
+    transition: all ease 0.3s;
+    margin-top: 10px;
+
+    &:hover {
+      background: #f35f5d;
+    }
+
+    @media screen and (min-width: 669px) {
+      cursor: pointer;
+    }
+  }
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  display: inline-block;
+  color: #3f3c51;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+  a {
+    text-decoration: none;
+    color: #8ab2df;
+  }
+}
+
+
