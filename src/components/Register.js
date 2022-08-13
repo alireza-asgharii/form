@@ -65,7 +65,7 @@ const Register = () => {
       );
       toast.promise(resolveAfter3Sec, { 
         pending: "Please wait",
-        success: "Registration is done",
+        success: `Registration is done. Welcome ${data.name} :)`,
         error: "Registration failed",
       });
     } else {
