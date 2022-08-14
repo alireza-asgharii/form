@@ -12,6 +12,11 @@ const Div = styled.div`
   align-items: center;
   height: 100vh;
   background: #eaf6f6;
+
+  @media screen and (max-width: 500px) {
+    height: auto;
+    margin-top: 40px;
+  }
 `;
 
 const Shape = styled.div`
@@ -37,7 +42,7 @@ const Shape = styled.div`
     height: 300px;
     opacity: 0.4;
   }
-  @media screen and (min-width: 1700px) {
+  @media screen and (min-width: 1300px) {
     display: none;
   }
 `;

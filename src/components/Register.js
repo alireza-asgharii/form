@@ -43,7 +43,7 @@ const Register = () => {
   };
 
   useEffect(() => {
-    setErr(validata(data));
+    setErr(validata(data, 'register'));
   }, [data, focus]);
 
   const submitHandler = (e) => {
