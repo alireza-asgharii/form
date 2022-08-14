@@ -8,11 +8,9 @@ import styles from "../styles/login.module.scss";
 //validata function
 import { validata } from "../function/validata";
 
-
 //tost
 import tost from "../function/tostify";
 import { ToastContainer } from "react-toastify";
-
 
 //Icons
 import google from "../assets/icon/google.png";
@@ -49,18 +47,18 @@ const Login = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (Object.keys(err).length === 0) {
-        axios
-          .post("https://jsonplaceholder.typicode.com/users", data)
-          .then((res) => {
-            if (res.status === 200 || res.status === 201) {
-              tost('success', 'Log in done')
-              setData({
-                email: '',
-                password: ''
-              })
-              setFocus({})
-            }
-          })
+      axios
+        .post("https://jsonplaceholder.typicode.com/users", data)
+        .then((res) => {
+          if (res.status === 200 || res.status === 201) {
+            tost("success", "Log in done");
+            setData({
+              email: "",
+              password: "",
+            });
+            setFocus({});
+          }
+        });
     } else {
       tost("error", "Login failed  ");
       setFocus({
@@ -83,6 +81,9 @@ const Login = () => {
         <form onSubmit={submitHandler} className={styles.formContainer}>
           <label>
             <input
+              className={
+                err.email && focus.email ? styles.borderRed : styles.borderGreen
+              }
               value={data.email}
               onChange={changeHandler}
               type="email"
@@ -94,6 +95,9 @@ const Login = () => {
           </label>
           <label>
             <input
+              className={
+                err.password && focus.password ? styles.borderRed : styles.borderGreen
+              }
               value={data.password}
               onChange={changeHandler}
               type="password"

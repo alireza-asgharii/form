@@ -91,6 +91,9 @@ const Register = () => {
         <form onSubmit={submitHandler} className={styles.formContainer}>
           <label>
             <input
+            className={
+              err.name && focus.name ? styles.borderRed : styles.borderGreen
+            }
               value={data.name}
               onChange={changeHandler}
               type="text"
@@ -102,6 +105,9 @@ const Register = () => {
           </label>
           <label>
             <input
+            className={
+              err.email && focus.email ? styles.borderRed : styles.borderGreen
+            }
               value={data.email}
               onChange={changeHandler}
               type="email"
@@ -113,6 +119,9 @@ const Register = () => {
           </label>
           <label>
             <input
+            className={
+              err.password && focus.password ? styles.borderRed : styles.borderGreen
+            }
               value={data.password}
               onChange={changeHandler}
               type="password"
@@ -124,6 +133,9 @@ const Register = () => {
           </label>
           <label>
             <input
+            className={
+              err.confirmPassword && focus.confirmPassword ? styles.borderRed : styles.borderGreen
+            }
               value={data.confirmPassword}
               onChange={changeHandler}
               type="password"
