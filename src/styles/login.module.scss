@@ -1,0 +1,239 @@
+.container {
+  z-index: 10;
+  width: 90%;
+  height: 660px;
+  overflow: hidden;
+  z-index: 10;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.421), #e9ecf6d6);
+  backdrop-filter: blur(20px) saturate(70%);
+  border: 2px solid #fff;
+  border-radius: 20px;
+
+  .imageContainer {
+    display: none;
+  }
+}
+
+.Signup {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  .imageContainer {
+    display: none;
+  }
+
+  .header {
+    flex: 20;
+    margin-top: 20px;
+  }
+
+  .formContainer {
+    flex: 50;
+    margin-top: 30px;
+  }
+
+  .iconContainer {
+    flex: 20;
+  }
+
+  .login {
+    flex: 5;
+  }
+}
+
+.header {
+  flex: 20;
+  text-align: center;
+  h1 {
+    color: #3f3c51;
+    padding-bottom: 10px;
+    margin-top: 20px;
+  }
+
+  p {
+    color: #3f3c51;
+    font-weight: 500;
+    font-size: 1.1rem;
+  }
+}
+
+.formContainer {
+  position: relative;
+  width: 90%;
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 65px;
+    position: relative;
+  }
+
+  input {
+    width: 100%;
+    height: 50px;
+    padding: 2px 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+
+    &::placeholder {
+      color: #3f3c5190;
+      font-weight: 500;
+    }
+  }
+
+  span {
+    margin-top: 4px;
+    margin-left: 5px;
+    font-size: 0.8rem;
+    background: #ff5959;
+    color: #fff;
+    padding: 1px 5px;
+    opacity: 0.8;
+    position: absolute;
+    top: -13px;
+    right: 10px;
+    border-radius: 5px;
+    transition: all ease 0.3s;
+  }
+
+  .SignUpButton {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 10px;
+    background: #fc6b68;
+    color: rgba(255, 255, 255, 0.858);
+    font-weight: bold;
+    box-shadow: 0 10px 30px #fc6b684f;
+    transition: all ease 0.3s;
+    margin-top: 40px;
+
+    &:hover {
+      background: #f35f5d;
+    }
+
+    @media screen and (min-width: 669px) {
+      cursor: pointer;
+    }
+  }
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  display: inline-block;
+  color: #3f3c51;
+  font-weight: 600;
+  margin-bottom: 20px;
+
+  a {
+    text-decoration: none;
+    color: #8ab2df;
+    transition: all ease 0.3s;
+    &:hover {
+      color: #5d98da;
+    }
+  }
+}
+
+@media screen and (min-width: 999px) {
+  .container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 1200px;
+
+    .Signup {
+      flex: 40;
+      padding: 10px 100px;
+    }
+
+    .imageContainer {
+      display: block;
+      flex: 60;
+      border-radius: inherit;
+      overflow: hidden;
+      margin: 10px;
+      width: 100%;
+      height: 98%;
+      background: url("../image/Character-Login.png") no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+  }
+}
+
+.recoveryPass {
+  position: absolute;
+  right: 10px;
+  top: 128px;
+  font-weight: 600;
+  color: #3f3c51;
+  font-size: 0.8rem;
+  @media screen and (min-width: 660px) {
+    cursor: pointer;
+  }
+}
+
+.iconContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+
+  span {
+    display: inline-block;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    width: 87px;
+    height: 60px;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.5s;
+
+    @media screen and (min-width: 560px) {
+      cursor: pointer;
+    }
+
+    &:hover {
+      background: #fff;
+    }
+  }
+
+  img {
+    width: 35px;
+  }
+}
+
+.orContinue {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+
+  p {
+    font-size: .9rem;
+  }
+
+  span {
+    width: 70px;
+    height: 2px;
+    display: inline-block;
+    margin: 0 10px;
+
+    &:first-child {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0.375), rgba(51, 51, 51, 0.301));
+    }
+
+    &:last-child {
+      background: linear-gradient(to left, rgba(255, 255, 255, 0.375), rgba(51, 51, 51, 0.301));
+    }
+  }
+}
