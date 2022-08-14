@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 //styles
@@ -12,7 +12,11 @@ import tost from "../function/tostify";
 import { toast, ToastContainer } from "react-toastify";
 import axios from "axios";
 
+// Context
+import { loadingContext } from "../App";
+
 const Register = () => {
+  const loadingDsipatch = useContext(loadingContext);
   const navigate = useNavigate();
   const [data, setData] = useState({
     name: "",
@@ -43,7 +47,7 @@ const Register = () => {
   };
 
   useEffect(() => {
-    setErr(validata(data, 'register'));
+    setErr(validata(data, "register"));
   }, [data, focus]);
 
   const submitHandler = (e) => {
@@ -57,13 +61,14 @@ const Register = () => {
       //   });
 
       const resolveAfter3Sec = new Promise((resolve) =>
-        axios.post("https://jsonplaceholder.typicode.com/users", data)
-        .then(res => {
-          resolve(res);
-          setTimeout(() => navigate("/login", { replace: true }), 2000)
-        })
+        axios
+          .post("https://jsonplaceholder.typicode.com/users", data)
+          .then((res) => {
+            resolve(res);
+            setTimeout(() => navigate("/login", { replace: true }), 2000);
+          })
       );
-      toast.promise(resolveAfter3Sec, { 
+      toast.promise(resolveAfter3Sec, {
         pending: "Please wait",
         success: `Registration is done. Welcome ${data.name} :)`,
         error: "Registration failed",
@@ -91,9 +96,9 @@ const Register = () => {
         <form onSubmit={submitHandler} className={styles.formContainer}>
           <label>
             <input
-            className={
-              err.name && focus.name ? styles.borderRed : styles.borderGreen
-            }
+              className={
+                err.name && focus.name ? styles.borderRed : styles.borderGreen
+              }
               value={data.name}
               onChange={changeHandler}
               type="text"
@@ -105,9 +110,9 @@ const Register = () => {
           </label>
           <label>
             <input
-            className={
-              err.email && focus.email ? styles.borderRed : styles.borderGreen
-            }
+              className={
+                err.email && focus.email ? styles.borderRed : styles.borderGreen
+              }
               value={data.email}
               onChange={changeHandler}
               type="email"
@@ -119,9 +124,11 @@ const Register = () => {
           </label>
           <label>
             <input
-            className={
-              err.password && focus.password ? styles.borderRed : styles.borderGreen
-            }
+              className={
+                err.password && focus.password
+                  ? styles.borderRed
+                  : styles.borderGreen
+              }
               value={data.password}
               onChange={changeHandler}
               type="password"
@@ -133,9 +140,11 @@ const Register = () => {
           </label>
           <label>
             <input
-            className={
-              err.confirmPassword && focus.confirmPassword ? styles.borderRed : styles.borderGreen
-            }
+              className={
+                err.confirmPassword && focus.confirmPassword
+                  ? styles.borderRed
+                  : styles.borderGreen
+              }
               value={data.confirmPassword}
               onChange={changeHandler}
               type="password"
@@ -158,7 +167,7 @@ const Register = () => {
             />
             {err.checkbox && focus.checkbox && <span>{err.checkbox}</span>}
           </label>
-          <button className={styles.SignUpButton}>Sign up</button>
+          <button className={styles.SignUpButton} onClick={Object.keys(err).length === 0 ? (() => loadingDsipatch(20)) : undefined}>Sign up</button>
         </form>
         <span className={styles.login}>
           You have an account? <Link to="/login">Login now</Link>

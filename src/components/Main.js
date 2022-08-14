@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./Landing";
 import styled from "styled-components";
 import Register from "./Register";
 import Login from "./Login";
+import LoadingBar from "react-top-loading-bar";
 
 //Styled-components
 const Div = styled.div`
@@ -48,8 +49,15 @@ const Shape = styled.div`
 `;
 
 const Main = () => {
+  const [progress, setProgress] = useState(0)
+  
   return (
-    <Div>
+    <Div onLoad={() => setProgress(100)}>
+      <LoadingBar
+        color='#f11946'
+        progress={progress}
+        onLoaderFinished={() => setProgress(0)}
+      />
       <Shape></Shape>
       <Routes>
         <Route path="/" element={<Landing />} />

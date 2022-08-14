@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -17,7 +17,12 @@ import google from "../assets/icon/google.png";
 import apple from "../assets/icon/apple.png";
 import facebook from "../assets/icon/facebook.png";
 
+//conetext
+import { loadingContext } from "../App";
+
 const Login = () => {
+  const loadingDsipatch = useContext(loadingContext);
+
   const [err, setErr] = useState({});
   const [data, setData] = useState({
     email: "",
@@ -47,6 +52,7 @@ const Login = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     if (Object.keys(err).length === 0) {
+      loadingDsipatch(20)
       axios
         .post("https://jsonplaceholder.typicode.com/users", data)
         .then((res) => {
@@ -57,6 +63,7 @@ const Login = () => {
               password: "",
             });
             setFocus({});
+            loadingDsipatch(100)
           }
         });
     } else {
