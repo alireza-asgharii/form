@@ -110,6 +110,10 @@
     right: 10px;
     border-radius: 5px;
     transition: all ease 0.3s;
+
+    @media screen and (max-width: 280px) {
+      font-size: .65rem;
+    }
   }
 
   .checkbox {
