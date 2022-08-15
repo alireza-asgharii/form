@@ -97,11 +97,32 @@
 }
 
 .about {
-  position: absolute;
+  position: fixed;
   bottom: 10px;
-  right: 10px;
+  left: 15px;
   font-size: 1.4rem;
   opacity: 0.6;
+  z-index: 22;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    background: #3f3c51;
+    padding: 0 3px;
+    color: #fff;
+    border-radius: 4px;
+  }
+
+  span:first-child {
+    font-size: 1rem;
+    padding-top: 4px;
+    padding-right: 4px;
+  }
+  span:last-child {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 999px) {

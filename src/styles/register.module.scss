@@ -177,6 +177,10 @@
   font-weight: 600;
   margin-bottom: 20px;
 
+  @media screen and (max-width: 660px) {
+    font-size: .9rem;
+  }
+
   a {
     text-decoration: none;
     color: #8ab2df;

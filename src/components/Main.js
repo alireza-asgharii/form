@@ -16,7 +16,7 @@ const Div = styled.div`
 
   @media screen and (max-width: 500px) {
     height: auto;
-    margin-top: 40px;
+    margin-top: 70px;
   }
 `;
 
