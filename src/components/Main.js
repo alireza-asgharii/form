@@ -46,6 +46,10 @@ const Shape = styled.div`
   @media screen and (min-width: 1300px) {
     display: none;
   }
+
+  @media screen and (min-height: 700px) {
+    display: none;
+  }
 `;
 
 const Main = () => {
