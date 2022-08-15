@@ -76,6 +76,7 @@ const Login = () => {
   };
 
   return (
+    <>
     <div className={styles.container}>
       <div className={styles.imageContainer}>{/* image */}</div>
       <div className={styles.Signup}>
@@ -137,8 +138,10 @@ const Login = () => {
           Not a member? <Link to="/register">Register now</Link>
         </span>
       </div>
-      <ToastContainer />
     </div>
+      <ToastContainer />
+    </>
+
   );
 };
 
