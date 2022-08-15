@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Landing from "./Landing";
 import styled from "styled-components";
@@ -63,7 +63,7 @@ const Main = () => {
         <Route path="/" element={<Landing />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<Navigate />} />
+        <Route path="/*" element={<Navigate to='/' />} />
       </Routes>
     </Div>
   );
