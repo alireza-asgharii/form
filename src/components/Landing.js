@@ -2,13 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 //styles
-import styles from '../styles/Landing.module.scss';
+import styles from "../styles/Landing.module.scss";
+
+//Icon
+import { AiOutlineInfoCircle } from "react-icons/ai";
 
 const Landing = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.imgContainer}>
-      </div>
+      <div className={styles.imgContainer}></div>
       <div className={styles.buttonContainer}>
         <h3>
           Discover your <br />
@@ -22,6 +24,11 @@ const Landing = () => {
           <Link to="/register">Register</Link>
           <Link to="/login">Sign in</Link>
         </div>
+      </div>
+      <div className={styles.about}>
+        <a href="https://dribbble.com/shots/15889044-Login-Register-Mobile-App">
+          <AiOutlineInfoCircle />
+        </a>
       </div>
     </div>
   );
